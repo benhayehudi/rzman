@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path('..', __FILE__)
+require_relative '../lib/rzman'
+require_relative '../lib/rzman/zmanim'
+require_relative '../lib/rzman/scraper'
+
+Rzman::CLI.new.call
