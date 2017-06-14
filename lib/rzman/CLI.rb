@@ -70,9 +70,8 @@ end
     if first_choice == "1"
       puts "Your zmanim for the day:"
     elsif first_choice == "2"
-      puts "Please type in your city"
-      puts "(U.S. *only* & proper spelling matters):"
-      @@shabbat_input = gets.strip.to_s.split(/ |\_/).map(&:capitalize).join(" ")
+      puts "Please type in your zipcode:"
+      @@zip_input = gets.strip.to_i
       # @@shabbat_input.split(/ |\_/).map(&:capitalize).join(" ")
       Rzman::Zmanim.shabbat_time
     elsif first_choice == "exit"
