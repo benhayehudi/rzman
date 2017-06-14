@@ -1,18 +1,24 @@
-class Rzman::Scraper
-# Go to Chabad.org
-# get zmanim for zipcode and date
-# end up with array of data i.e. [sunrise, shkiah, etc.]
-# Make a new zman instance with data
 
-  @@zman_info = []
+class Rzman::Scraper < Rzman::CLI
 
-  def self.scrape_zmanim_today
-    doc = Nokogiri::HTML(open("http://www.chabad.org/calendar/zmanim_cdo/jewish/Halachic-Times.htm#locationId=#{@zipcode}&locationType=2&tdate=#{@d}"))
-    sunrise = doc.search(".large")[0].text
-    binding.pry
+#   def self.scrape_zmanim_today
+#     doc = Nokogiri::HTML(open("http://www.hebcal.com/shabbat/browse/united-states"))
+#
+# end
+
+  def self.scrape_shabbat_times
+    doc = Nokogiri::HTML(open("http://www.hebcal.com/shabbat/browse/united-states"))
+    @times_parsed = []
+    doc.css(".col-sm-3").css("li").each do |times|
+      @times_parsed << {
+       :city => times.css("a").text,
+       :time => times.xpath('///a/following-sibling::text()').text
+      }
+      binding.pry
+    end
+    @times_parsed
   end
 
-  # def self.scrape_zmanim_date
-  # end
+
 
 end

@@ -1,6 +1,5 @@
-class Rzman::Zmanim
-  attr_accessor :sunrise, :midday, :minha_gedolah, :plag_haminha, :sunset, :nightfall, :url
-
+class Rzman::Zmanim < Rzman::CLI
+  attr_accessor :sunrise, :midday, :minha_gedolah, :plag_haminha, :sunset, :nightfall, :url, :shabbat_input
   def initialize
     @url = url
   end
@@ -20,17 +19,10 @@ class Rzman::Zmanim
     exit
   end
 
-  def self.date
-    # zmanim_date = self.new
-    # zmanim_date.sunrise = "sunrise"
-    # zmanim_date.midday = "midday"
-    # zmanim_date.minha_gedolah = "minha gedolah"
-    # zmanim_date.plag_haminha = "plag haminha"
-    # zmanim_date.sunset = "sunset"
-    # zmanim_date.nightfall "nightfall"
-    # zmanim_date.url = "url"
-    # zmanim_date
-    puts "Happy davening!"
+  def self.shabbat_time
+    Rzman::Scraper.scrape_shabbat_times
+    puts "#{@times_parsed}"
+    puts "Shabbat Shalom!"
     exit
   end
 

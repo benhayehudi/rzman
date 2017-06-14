@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require "mechanize"
 require 'pry'
 
 require_relative "./rzman/version"

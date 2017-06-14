@@ -1,0 +1,19 @@
+# Logfile created on 2017-06-13 21:36:59 -0400 by logger.rb/1.2.8
+I, [2017-06-13T21:36:59.203266 #88995]  INFO -- : Net::HTTP::Get: /htdocs/main.en.html
+D, [2017-06-13T21:36:59.203483 #88995] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2017-06-13T21:36:59.203558 #88995] DEBUG -- : request-header: accept => */*
+D, [2017-06-13T21:36:59.203632 #88995] DEBUG -- : request-header: user-agent => Mechanize/2.7.5 Ruby/2.3.0p0 (http://github.com/sparklemotion/mechanize/)
+D, [2017-06-13T21:36:59.203666 #88995] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2017-06-13T21:36:59.203696 #88995] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2017-06-13T21:36:59.203728 #88995] DEBUG -- : request-header: host => www.hebrewcalendar.net
+I, [2017-06-13T21:36:59.320897 #88995]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2017-06-13T21:36:59.320975 #88995] DEBUG -- : response-header: date => Wed, 14 Jun 2017 01:36:59 GMT
+D, [2017-06-13T21:36:59.321002 #88995] DEBUG -- : response-header: server => Apache
+D, [2017-06-13T21:36:59.321021 #88995] DEBUG -- : response-header: last-modified => Tue, 18 Nov 2008 04:50:12 GMT
+D, [2017-06-13T21:36:59.321051 #88995] DEBUG -- : response-header: etag => "5b3005e-342-45bef6e426900"
+D, [2017-06-13T21:36:59.321069 #88995] DEBUG -- : response-header: accept-ranges => bytes
+D, [2017-06-13T21:36:59.321084 #88995] DEBUG -- : response-header: content-length => 834
+D, [2017-06-13T21:36:59.321099 #88995] DEBUG -- : response-header: keep-alive => timeout=5, max=100
+D, [2017-06-13T21:36:59.321114 #88995] DEBUG -- : response-header: connection => Keep-Alive
+D, [2017-06-13T21:36:59.321129 #88995] DEBUG -- : response-header: content-type => text/html
+D, [2017-06-13T21:36:59.321250 #88995] DEBUG -- : Read 834 bytes (834 total)
