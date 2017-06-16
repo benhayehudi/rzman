@@ -1,29 +1,19 @@
 class Rzman::Zmanim < Rzman::CLI
-  attr_accessor :sunrise, :midday, :minha_gedolah, :plag_haminha, :sunset, :nightfall, :url, :shabbat_input
-  def initialize
-    @url = url
-  end
 
-  def self.today
-    # should return today's Zmanim
-    # zmanim_today = self.new
-    # zmanim_today.sunrise = "sunrise"
-    # zmanim_today.midday = "midday"
-    # zmanim_today.minha_gedolah = "minha gedolah"
-    # zmanim_today.plag_haminha = "plag haminha"
-    # zmanim_today.sunset = "sunset"
-    # zmanim_today.nightfall "nightfall"
-    # zmanim_today.url = "url"
-    # zmanim_today
-    puts "Happy davening!"
-    exit
+  attr_accessor :sunrise_name, :sunrise, :midday_name, :midday, :minha_gedolah_name, :minha_gedolah, :plag_haminha_name, :plag_haminha, :sunrise_name, :sunset, :nightfall_name, :nightfall
+
+  def self.zmanim_today
+    Rzman::Scraper.scrape_zmanim_today
+    puts " "
+    puts "Zmanim courtesy of MyZmanim.com".colorize(:yellow)
+    puts "Happy davening!".colorize(:yellow)
   end
 
   def self.shabbat_time
     Rzman::Scraper.scrape_shabbat_times
-    puts "#{@times_parsed}"
-    puts "Shabbat Shalom!"
-    exit
+    puts " "
+    puts "Shabbat times courtesy of MyJewishLearning.com.".colorize(:yellow)
+    puts "Shabbat Shalom!".colorize(:yellow)
   end
 
 end

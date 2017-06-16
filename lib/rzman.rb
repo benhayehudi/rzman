@@ -2,6 +2,9 @@ require 'open-uri'
 require 'nokogiri'
 require "mechanize"
 require 'pry'
+require 'colorize'
+require 'go_maps'
+
 
 require_relative "./rzman/version"
 require_relative './rzman/cli'

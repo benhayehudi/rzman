@@ -35,6 +35,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "nokogiri"
   spec.add_dependency "mechanize"
+  spec.add_dependency "colorize"
+  spec.add_dependency "go_maps"
 
   spec.add_development_dependency "pry"
 end
