@@ -42,7 +42,4 @@ class Rzman::Scraper < Rzman::CLI
     puts "Shabbat in #{@times_parsed[0][:location]}:".colorize(:light_red)
     puts "#{@times_parsed[0][:time]}".colorize(:cyan)
   end
-
-
-
 end

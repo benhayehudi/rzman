@@ -1,8 +1,8 @@
-# Rzman
+# Rzman: Ruby Zmanim
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rzman`. To experiment with that code, run `bin/console` for an interactive prompt.
+RZman is a Ruby CLI Gem that will deliver to you the זמנים(zmanim), daily Jewish prayer times and הדלקת נרות(hadlakat nerot), candle lighting times for Shabbat based on the U.S. zip code you provide.
 
-TODO: Delete this and the text above, and describe your gem
+The data it provides is scraped from MyJewishLearning.com for candle lighting times and MyZmanim.com for daily zmanim.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+RZman is a very easy Gem to use. Once you run it you will be prompted to choose from two options and then for a valid U.S. zipcode. The program will provide you with the times you requested and prompt you to either return to the main menu or exit.
 
 ## Development
 
@@ -38,4 +38,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/benhay
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

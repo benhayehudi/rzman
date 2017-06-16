@@ -15,5 +15,4 @@ class Rzman::Zmanim < Rzman::CLI
     puts "Shabbat times courtesy of MyJewishLearning.com.".colorize(:yellow)
     puts "Shabbat Shalom!".colorize(:yellow)
   end
-
 end
