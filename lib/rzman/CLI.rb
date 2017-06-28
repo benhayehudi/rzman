@@ -1,5 +1,6 @@
 # CLI Controller
 require 'date'
+require 'pry'
 
 class Rzman::CLI
 
@@ -67,6 +68,9 @@ class Rzman::CLI
 
   def get_zmanim
     Rzman::Zmanim.zmanim_today
+    binding.pry
+    current_zmanim = Rzman::Zmanim.all.last
+    display_zmanim(current_zmanim)
     puts "Do you want to go back to the main menu? (y/n):".colorize(:light_cyan)
     choice = gets.strip
     if choice == "y"
@@ -74,6 +78,16 @@ class Rzman::CLI
     else
       goodbye
     end
+  end
+
+  def display_zmanim(zmanim)
+    puts " "
+    puts "Your Zmanim:".colorize(:light_red)
+    puts "Sunrise: #{zmanim.sunrise}".colorize(:cyan)
+    puts "Midday: #{zmanim.midday}".colorize(:cyan)
+    puts "#{zmanim.minha_gedolah_name}: #{zmanim.minha_gedolah}".colorize(:cyan)
+    puts "#{zmanim.plag_haminha_name}: #{zmanim.plag_haminha}".colorize(:cyan)
+    puts "#{zmanim.nightfall_name}: #{zmanim.nightfall}".colorize(:cyan)
   end
 
   def get_shabbat_zmanim

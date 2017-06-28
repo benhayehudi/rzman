@@ -6,7 +6,7 @@ class Rzman::Scraper < Rzman::CLI
     @zmanim_parsed = []
 
     doc.css("center").each do |z|
-      @zmanim_parsed << {
+      zmanim_hash = {
         :sunrise_name => z.css("tr:nth-of-type(7) td:nth-of-type(1) strong").text,
         :sunrise => z.css("tr:nth-of-type(8) td:nth-of-type(2) span:nth-of-type(1)").text,
         :midday_name => z.css("tr:nth-of-type(17) td:nth-of-type(1) strong").text,
@@ -18,14 +18,9 @@ class Rzman::Scraper < Rzman::CLI
         :nightfall_name => z.css("tr:nth-of-type(28) td:nth-of-type(1) strong").text,
         :nightfall => z.css("tr:nth-of-type(29) td:nth-of-type(2) span:nth-of-type(1)").text
       }
+      Rzman::Zmanim.new(zmanim_hash)
     end
-    puts " "
-    puts "Your Zmanim:".colorize(:light_red)
-    puts "Sunrise: #{@zmanim_parsed[0][:sunrise]}".colorize(:cyan)
-    puts "Midday: #{@zmanim_parsed[0][:midday]}".colorize(:cyan)
-    puts "#{@zmanim_parsed[0][:minha_gedolah_name]}: #{@zmanim_parsed[0][:minha_gedolah]}".colorize(:cyan)
-    puts "#{@zmanim_parsed[0][:plag_haminha_name]}: #{@zmanim_parsed[0][:plag_haminha]}".colorize(:cyan)
-    puts "#{@zmanim_parsed[0][:nightfall_name]}: #{@zmanim_parsed[0][:nightfall]}".colorize(:cyan)
+
   end
 
   def self.scrape_shabbat_times
